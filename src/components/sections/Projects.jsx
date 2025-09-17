@@ -8,8 +8,11 @@ export const Projects = () => {
             </h2>
             
             {/* project grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+                {/* project 1 */}
+                <div>
+                    
+                </div>
             </div>
         </div>
     </section>
