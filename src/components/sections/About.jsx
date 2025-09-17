@@ -143,9 +143,7 @@ export const About = () => {
 
             <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 transition-all">
             <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
-                I'm a passionate developer with a focus on creating dynamic and responsive web applications.
-                My journey in tech has equipped me with a diverse skill set, enabling me to tackle various
-                challenges and deliver high-quality solutions.
+                Tech enthusiast & software developer | Passionate about clean code, new tech, and building smart solutions.
                 </p>
             </div>
 
