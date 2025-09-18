@@ -79,7 +79,7 @@ export const Projects = () => {
 
   // ---- Project Card component ----
   const ProjectCard = ({ project }) => (
-    <div className="rounded-xl p-6 border border-green-600/20 hover:-translate-y-1 hover:shadow-lg transition-all bg-gray-900/40">
+    <div className="rounded-xl p-6 border border-green-600/20 hover:-translate-y-1 hover:shadow-[0_2px_10px_-1px_rgba(34,197,94,0.4)] transition-all bg-gray-900/40">
       <img
         src={project.image}
         alt={project.title}
@@ -95,7 +95,7 @@ export const Projects = () => {
           <span
             key={t}
             className="border border-blue-500/20 bg-green-500/10 px-2 py-1 text-xs text-green-300 rounded-full 
-                       hover:bg-blue-500/20 hover:shadow-md transition"
+                       hover:bg-green-500/20 hover:shadow-[0_2px_10px_-1px_rgba(34,197,94,0.4)] transition-all"
           >
             {t}
           </span>
@@ -124,7 +124,7 @@ export const Projects = () => {
           Featured Projects
         </h2>
 
-        <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 transition-all">
+        <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 hover:shadow-[0_2px_10px_-1px_rgba(59,130,246,0.5)] transition-all">
             <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
                 This section highlights a curated selection of my GitHub repositories, showcasing 
                 full-stack development with modern web technologies. Each project reflects hands-on 
