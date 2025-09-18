@@ -38,21 +38,21 @@ export const Projects = () => {
 
   const backendProjects = [
     {
-      title: "Book-a-Table API",
+      title: "Book-a-Table: RESTful API",
       repo: "Book-a-Table",
       fallbackDescription:
         "Restaurant booking backend built with ASP.NET Core and SQL Server.",
-      image: "/images/bookatable.png",
+      image: "src/assets/bookatable.png",
       tech: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"],
       github: "https://github.com/awalashfaqul/Book-a-Table", 
     },
     {
-      title: "Weather API",
-      repo: "Weather-API",
-      fallbackDescription: "Phoenix + Elixir backend for weather data.",
-      image: "/images/weather.png",
-      tech: ["Elixir", "Phoenix", "PostgreSQL"],
-      github: "https://github.com/awalashfaqul/Weather-API",
+      title: "Personal interest fetcher with Minimal API",
+      repo: "MiniProject-minimalAPI",
+      fallbackDescription: "This mini project is about building a simple Web API. The minimal API uses a REST architecture and has enabled external services and applications to retrieve and change data in the application.",
+      image: "src/assets/minimalapi.png",
+      tech: ["C#", "minimal REST API", "ASP.NET Core"],
+      github: "https://github.com/awalashfaqul/MiniProject-minimalAPI",
     },
   ];
 
@@ -94,7 +94,7 @@ export const Projects = () => {
         {project.tech.map((t) => (
           <span
             key={t}
-            className="border border-blue-500/20 bg-blue-500/10 px-2 py-1 text-xs text-blue-300 rounded-full 
+            className="border border-blue-500/20 bg-green-500/10 px-2 py-1 text-xs text-green-300 rounded-full 
                        hover:bg-blue-500/20 hover:shadow-md transition"
           >
             {t}
@@ -108,8 +108,8 @@ export const Projects = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block px-4 py-2 text-sm font-medium text-white
-                   bg-blue-600 rounded-lg hover:bg-blue-700
-                   border border-blue-500/30 shadow hover:shadow-blue-500/30 transition"
+                   bg-green-800 rounded-lg hover:bg-green-600
+                   border border-green-500/30 shadow hover:shadow-green-500/30 transition"
       >
         Visit on GitHub
       </a>
@@ -123,6 +123,19 @@ export const Projects = () => {
                        from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Featured Projects
         </h2>
+
+        <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 transition-all">
+            <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
+                This section highlights a curated selection of my GitHub repositories, showcasing 
+                full-stack development with modern web technologies. Each project reflects hands-on 
+                experience in <strong className="text-blue-400">React</strong>, <strong className="text-blue-400">Tailwind CSS</strong>,  
+                and <strong className="text-blue-400">C#</strong>, <strong className="text-blue-400">ASP .NET Core</strong> backends, demonstrating 
+                clean architecture, scalable design, and a commitment to high-quality code.
+            </p>
+            <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
+                Explore the live demos and source code to see these solutions in action.
+            </p>
+        </div>
 
         {/* Two-column layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
