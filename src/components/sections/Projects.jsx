@@ -1,3 +1,4 @@
+import{ RevealOnScroll } from "../RevealOnScroll";
 import { useEffect, useState } from "react";
 
 export const Projects = () => {
@@ -118,6 +119,7 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="min-h-screen flex items-center justify-center py-20 bg-black">
+      <RevealOnScroll>
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="font-bold text-4xl md:text-6xl mb-12 bg-gradient-to-r 
                        from-blue-400 to-purple-500 bg-clip-text text-transparent">
@@ -184,6 +186,7 @@ export const Projects = () => {
         </div>
       )}
       {/* ---- Image Modal section ends here---- */}
+      </RevealOnScroll>
     </section>
   );
 };
