@@ -5,6 +5,11 @@ import { useEffect, useState } from "react";
 // import responsiveImg from '../assets/responsive-portfolio.png';
 // import bookatableImg from '../assets/bookatable.png';
 // import minimalApiImg from '../assets/minimalapi.png';
+import portfolioImg from '/images/portfolio.png';
+import portfolioOldImg from '/images/Portfolio-with-React.png';
+import responsiveImg from '/images/responsive-portfolio.png';
+import bookatableImg from '/images/bookatable.png';
+import minimalApiImg from '/images/minimalapi.png'; // Updated import paths
 
 
 export const Projects = () => {
@@ -19,7 +24,7 @@ export const Projects = () => {
       repo: "Ashfaquls-Portfolio",
       fallbackDescription:
         "A personal portfolio site built with React and Tailwind CSS to showcase my work.",
-      image: "/images/portfolio.png",
+      image: portfolioImg,
       tech: ["React + Vite", "Tailwind CSS", "JavaScript"],
       github: "https://github.com/awalashfaqul/Ashfaquls-Portfolio",
     },
@@ -28,7 +33,7 @@ export const Projects = () => {
       repo: "portfolio-with-react",
       fallbackDescription:
         "A personal portfolio site built with React, HTML, and CSS to showcase my work while fetching data from GitHub API. Includes a resume generator.",
-      image: "/images/Portfolio-with-React.png",
+      image: portfolioOldImg,
       tech: ["HTML", "CSS", "VanillaJS", "React"],
       github: "https://github.com/awalashfaqul/portfolio-with-react",
     },
@@ -37,7 +42,7 @@ export const Projects = () => {
       repo: "Responsive-Portfolio",
       fallbackDescription:
         "A responsive portfolio site built with HTML, CSS, and vanilla JavaScript.",
-      image: "/images/responsive-portfolio.png",
+      image: responsiveImg,
       tech: ["HTML", "CSS", "VanillaJS"],
       github: "https://github.com/awalashfaqul/Responsive-Portfolio",
     },
@@ -49,7 +54,7 @@ export const Projects = () => {
       repo: "Book-a-Table",
       fallbackDescription:
         "Restaurant booking backend built with ASP.NET Core and SQL Server.",
-      image: "/images/bookatable.png",
+      image: bookatableImg,
       tech: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"],
       github: "https://github.com/awalashfaqul/Book-a-Table", 
     },
@@ -57,7 +62,7 @@ export const Projects = () => {
       title: "Personal interest fetcher with Minimal API",
       repo: "MiniProject-minimalAPI",
       fallbackDescription: "This mini project is about building a simple Web API. The minimal API uses a REST architecture and has enabled external services and applications to retrieve and change data in the application.",
-      image: "/images/minimalapi.png",
+      image: minimalApiImg,
       tech: ["C#", "minimal REST API", "ASP.NET Core"],
       github: "https://github.com/awalashfaqul/MiniProject-minimalAPI",
     },
