@@ -132,8 +132,7 @@ export const Projects = () => {
     <section id="projects" className="min-h-screen flex items-center justify-center py-20 bg-black">
       <RevealOnScroll>
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="font-bold text-4xl md:text-6xl mb-12 bg-gradient-to-r 
-                       from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">
           Featured Projects
         </h2>
 
