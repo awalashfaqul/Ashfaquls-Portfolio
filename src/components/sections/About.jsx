@@ -138,8 +138,7 @@ export const About = () => {
     <section id="about" className="min-h-screen flex items-center justify-center py-20">
         <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
-            <h2 className="font-bold text-4xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 
-                        bg-clip-text text-transparent">
+            <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">
                 About Me
             </h2>
 
