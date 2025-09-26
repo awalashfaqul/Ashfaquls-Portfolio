@@ -75,11 +75,59 @@
 //   );
 // };
 
-import React, { useEffect, useRef, useState } from "react";
+// import React, { useEffect, useRef, useState } from "react";
+
+// export const RevealOnScroll = ({ children }) => {
+//   const ref = useRef(null);
+//   const [hasIntersected, setHasIntersected] = useState(false);
+
+//   useEffect(() => {
+//     const node = ref.current;
+//     if (!node) return;
+
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           // add once and remember
+//           node.classList.add("visible");
+//           setHasIntersected(true);
+//         } else {
+//           // optional: remove if you want it to fade when leaving
+//           // node.classList.remove("visible");
+//         }
+//       },
+//       {
+//         threshold: 0.1,           // fire earlier
+//         rootMargin: "0px 0px -10% 0px", // less aggressive bottom margin
+//       }
+//     );
+
+//     observer.observe(node);
+
+//     return () => observer.disconnect();
+//   }, []);
+
+//   // ✅ If user lands mid-page (mobile deep-link) ensure it shows
+//   useEffect(() => {
+//     if (!hasIntersected && ref.current) {
+//       const rect = ref.current.getBoundingClientRect();
+//       if (rect.top < window.innerHeight && rect.bottom > 0) {
+//         ref.current.classList.add("visible");
+//       }
+//     }
+//   }, [hasIntersected]);
+
+//   return (
+//     <div ref={ref} className="reveal">
+//       {children}
+//     </div>
+//   );
+// };
+
+import React, { useEffect, useRef } from "react";
 
 export const RevealOnScroll = ({ children }) => {
   const ref = useRef(null);
-  const [hasIntersected, setHasIntersected] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -88,34 +136,32 @@ export const RevealOnScroll = ({ children }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // add once and remember
           node.classList.add("visible");
-          setHasIntersected(true);
         } else {
-          // optional: remove if you want it to fade when leaving
-          // node.classList.remove("visible");
+          node.classList.remove("visible");
         }
       },
       {
-        threshold: 0.1,           // fire earlier
-        rootMargin: "0px 0px -10% 0px", // less aggressive bottom margin
+        threshold: 0.1,                 // reveal as soon as 10% is visible
+        rootMargin: "0px 0px -10% 0px",  // small bottom margin so it triggers early
       }
     );
 
     observer.observe(node);
-
     return () => observer.disconnect();
   }, []);
 
-  // ✅ If user lands mid-page (mobile deep-link) ensure it shows
+  // ✅ initial check so it’s correct if already in view at page load
   useEffect(() => {
-    if (!hasIntersected && ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        ref.current.classList.add("visible");
-      }
+    const node = ref.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      node.classList.add("visible");
+    } else {
+      node.classList.remove("visible");
     }
-  }, [hasIntersected]);
+  }, []);
 
   return (
     <div ref={ref} className="reveal">
