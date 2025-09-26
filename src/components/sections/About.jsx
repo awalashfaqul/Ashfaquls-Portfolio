@@ -135,126 +135,128 @@ export const About = () => {
 
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py-20">
+    <section id="about" className="min-h-screen flex items-center justify-center py-20 bg-black px-4">
         <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-            <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">
-                About Me
-            </h2>
+          <div classname="max-w-2xl w-full border border-gray-700 rounded-xl text-center mx-auto p-8">
+            <div className="max-w-5xl mx-auto px-4">
+                <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">
+                    About Me
+                </h2>
 
-            <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
-                Tech enthusiast & software developer | Passionate about clean code, new tech, and building smart solutions.
-                </p>
-            </div>
+                <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 transition-all">
+                <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
+                    Tech enthusiast & software developer | Passionate about clean code, new tech, and building smart solutions.
+                    </p>
+                </div>
 
-            <div className="rounded-xl p-4">
-                <h3 className="text-xl font-bold mb-4 text-orange-400">Technical Skills</h3>
-            </div>
+                <div className="rounded-xl p-4">
+                    <h3 className="text-xl font-bold mb-4 text-orange-400">Technical Skills</h3>
+                </div>
 
-            {/* === Skills in exactly 2 columns === */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <SkillGroup title="Frontend" skills={frontendSkills} />
-            <SkillGroup title="Backend" skills={backendSkills} />
-            <SkillGroup title="Database" skills={databaseSkills} />
-            <SkillGroup title="Testing" skills={testSkills} />
-            <SkillGroup title="CI/CD" skills={cicdSkills} />
-            <SkillGroup title="Cloud Services" skills={cloudSkills} />
-            <SkillGroup title="Tools" skills={toolsSkills} />
-            </div>
+                {/* === Skills in exactly 2 columns === */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <SkillGroup title="Frontend" skills={frontendSkills} />
+                <SkillGroup title="Backend" skills={backendSkills} />
+                <SkillGroup title="Database" skills={databaseSkills} />
+                <SkillGroup title="Testing" skills={testSkills} />
+                <SkillGroup title="CI/CD" skills={cicdSkills} />
+                <SkillGroup title="Cloud Services" skills={cloudSkills} />
+                <SkillGroup title="Tools" skills={toolsSkills} />
+                </div>
 
-            <hr className="col-span-2 border-white/10 mt-6" /> {/* horizontal line */}
+                <hr className="col-span-2 border-white/10 mt-6" /> {/* horizontal line */}
 
-            {/* === Work Experience Section (Placeholder) === */}
-            <div className="rounded-xl p-4 mb-2 mt-10">
-                <h3 className="text-xl font-bold mb-2 text-purple-400">Work Experiences</h3>
-            </div>
-                {/* 1-column grid */}
-                {/* <div className="grid grid-cols-1 md:grid-cols-1">
-                    <WorkGroup />
-                </div> */}
-                    
+                {/* === Work Experience Section (Placeholder) === */}
+                <div className="rounded-xl p-4 mb-2 mt-10">
+                    <h3 className="text-xl font-bold mb-2 text-purple-400">Work Experiences</h3>
+                </div>
+                    {/* 1-column grid */}
+                    {/* <div className="grid grid-cols-1 md:grid-cols-1">
+                        <WorkGroup />
+                    </div> */}
+                        
 
-            <div className="grid grid-cols-1 md:grid-cols-1">
-                {/* Experience Column */}
-                {workExperiences.map((experience, i) => (
-                    <div className="rounded-xl p-8 border border-purple-500/20 mb-8 hover:-translate-y-1 transition-all">
-                        <ul className="space-y-4">
-                            <li key={i}>
-                                <p className="text-purple-300 font-lg font-semibold">{experience.role} - <span className="italic">{experience.period}</span></p>
-                                <p className="text-gray-400 text-lg italic">
-                                    {experience.company}
-                                </p>
-                                <ul className="list-disc list-inside mt-2">
-                                    {experience.details.map((detail, j) => (
-                                        <li key={j} className="text-gray-300 text-m">{detail}</li>
-                                    ))}
-                                </ul>
-                            </li>
+                <div className="grid grid-cols-1 md:grid-cols-1">
+                    {/* Experience Column */}
+                    {workExperiences.map((experience, i) => (
+                        <div className="rounded-xl p-8 border border-purple-500/20 mb-8 hover:-translate-y-1 transition-all">
+                            <ul className="space-y-4">
+                                <li key={i}>
+                                    <p className="text-purple-300 font-lg font-semibold">{experience.role} - <span className="italic">{experience.period}</span></p>
+                                    <p className="text-gray-400 text-lg italic">
+                                        {experience.company}
+                                    </p>
+                                    <ul className="list-disc list-inside mt-2">
+                                        {experience.details.map((detail, j) => (
+                                            <li key={j} className="text-gray-300 text-m">{detail}</li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+
+                <hr className="col-span-2 border-white/10 mt-6" /> {/* horizontal line */}
+
+                    {/* === Education Section (Placeholder) === */}
+                <div className="rounded-xl p-4 mb-2 mt-12">
+                    <h3 className="text-xl font-bold mb-2 text-green-600">Academic Attainments</h3>
+                </div>
+                    {/* 2-column grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Certifications Column */}
+                    <div className="rounded-xl p-8 border border-green-600/20 mb-8 hover:-translate-y-1 transition-all">
+                        <h4 className="text-lg font-semibold mb-4 text-green-300 underline">
+                            Certifications
+                        </h4>
+                        <ul className="list-disc list-inside">
+                            {certifiCations.map((cert, index) => (
+                                <li key={index} className="text-gray-300">
+                                    {cert} - {certifiCationsFrom[index]}
+                                </li>
+                            ))}
                         </ul>
                     </div>
-                ))}
-            </div>
-
-            <hr className="col-span-2 border-white/10 mt-6" /> {/* horizontal line */}
-
-                {/* === Education Section (Placeholder) === */}
-            <div className="rounded-xl p-4 mb-2 mt-12">
-                <h3 className="text-xl font-bold mb-2 text-green-600">Academic Attainments</h3>
-            </div>
-                {/* 2-column grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Certifications Column */}
-                <div className="rounded-xl p-8 border border-green-600/20 mb-8 hover:-translate-y-1 transition-all">
-                    <h4 className="text-lg font-semibold mb-4 text-green-300 underline">
-                        Certifications
-                    </h4>
-                    <ul className="list-disc list-inside">
-                        {certifiCations.map((cert, index) => (
-                            <li key={index} className="text-gray-300">
-                                {cert} - {certifiCationsFrom[index]}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                
-                {/* Degree Programs Column */}
-                <div className="rounded-xl p-8 border border-green-600/20 mb-8 hover:-translate-y-1 transition-all">
-                    <h4 className="text-lg font-bold mb-4 text-green-300 underline">
-                        Degrees
-                    </h4>
-                    <ul className="space-y-4">
-                        {degreeProgram.map((program, i) => (    
-                            <li key={program}>
-                                <p className="text-gray-100 font-medium font-semibold">{program}</p>
-                                <p className="text-gray-400 text-sm italic">
-                                    {degreeSchool[i]} — <span>{degreePeriod[i]}</span>
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-
-            <hr className="col-span-2 border-white/10 mt-4 mb-4" /> {/* horizontal line */}
-
-            <div className="rounded-xl p-4 mb-2 mt-10">
-                <h3 className="text-xl font-bold mb-2 text-blue-400">Languages</h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="rounded-xl p-8 border border-white/10 mb-8 hover:-translate-y-1 transition-all">
-                    <ul className="space-y-4">
-                        {languageList.map((lang, index) => (
-                            <li key={index} className="text-gray-300">
-                                <span className="font-semibold">{lang.name}</span> - <span className="italic">{lang.level}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    
+                    {/* Degree Programs Column */}
+                    <div className="rounded-xl p-8 border border-green-600/20 mb-8 hover:-translate-y-1 transition-all">
+                        <h4 className="text-lg font-bold mb-4 text-green-300 underline">
+                            Degrees
+                        </h4>
+                        <ul className="space-y-4">
+                            {degreeProgram.map((program, i) => (    
+                                <li key={program}>
+                                    <p className="text-gray-100 font-medium font-semibold">{program}</p>
+                                    <p className="text-gray-400 text-sm italic">
+                                        {degreeSchool[i]} — <span>{degreePeriod[i]}</span>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
 
+                <hr className="col-span-2 border-white/10 mt-4 mb-4" /> {/* horizontal line */}
+
+                <div className="rounded-xl p-4 mb-2 mt-10">
+                    <h3 className="text-xl font-bold mb-2 text-blue-400">Languages</h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="rounded-xl p-8 border border-white/10 mb-8 hover:-translate-y-1 transition-all">
+                        <ul className="space-y-4">
+                            {languageList.map((lang, index) => (
+                                <li key={index} className="text-gray-300">
+                                    <span className="font-semibold">{lang.name}</span> - <span className="italic">{lang.level}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                </div>
             </div>
-        </div>
+          </div>
         </RevealOnScroll>
     </section>
   );

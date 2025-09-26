@@ -129,9 +129,9 @@ export const Projects = () => {
   );
 
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center py-20 bg-black">
+    <section id="projects" className="min-h-screen flex items-center justify-center py-20 bg-black px-4">
       <RevealOnScroll>
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-2xl w-full border border-gray-700 rounded-xl text-center mx-auto p-8">
         <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">
           Featured Projects
         </h2>

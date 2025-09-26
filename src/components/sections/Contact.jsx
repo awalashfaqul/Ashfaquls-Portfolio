@@ -26,48 +26,50 @@ export const Contact = () => {
           });
     }
 
-    return <section id="contact" className="min-h-screen flex items-center justify-center py-20">
+    return <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-black px-4">
         <RevealOnScroll>
-            <div className="px-4 w-150 hover:-translate-y-1 transition-all max-w-2xl mx-auto rounded-xl p-8 border border-white/10 bg-gray-900/40">
-                <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">Get In Touch</h2>
-                <form className="space-y-6" onSubmit={handleSubmit}>
-                    <div className="relative">
-                        <input type="text" 
-                               id="name" 
-                               name="name" 
-                               value={formData.name}
-                               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                               placeholder="Enter Your Name" 
-                               required className="w-full bg-white/5 border border-white/10 rounded-md py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5" 
-                        />
+            <div className="max-w-2xl w-full border border-gray-700 rounded-xl text-center mx-auto p-8">
+                <div className="px-4 w-150 hover:-translate-y-1 transition-all max-w-2xl mx-auto rounded-xl p-8 border border-white/10 bg-gray-900/40">
+                    <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">Get In Touch</h2>
+                    <form className="space-y-6" onSubmit={handleSubmit}>
+                        <div className="relative">
+                            <input type="text" 
+                                id="name" 
+                                name="name" 
+                                value={formData.name}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                placeholder="Enter Your Name" 
+                                required className="w-full bg-white/5 border border-white/10 rounded-md py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5" 
+                            />
 
-                    </div>
-                    <div className="relative">
-                        <input type="text" 
-                               id="email" 
-                               name="email" 
-                               value={formData.email}
-                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                               placeholder="email@gmail.com" 
-                               required className="w-full bg-white/5 border border-white/10 rounded-md py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5" 
-                        />
+                        </div>
+                        <div className="relative">
+                            <input type="text" 
+                                id="email" 
+                                name="email" 
+                                value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                placeholder="email@gmail.com" 
+                                required className="w-full bg-white/5 border border-white/10 rounded-md py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5" 
+                            />
 
-                    </div>
-                    <div className="relative">
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Write Your Message Here..."
-                            required 
-                            value={formData.message}
-                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                            rows={5}
-                            className="w-full bg-white/5 border border-white/10 rounded-md py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                        />
+                        </div>
+                        <div className="relative">
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Write Your Message Here..."
+                                required 
+                                value={formData.message}
+                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                rows={5}
+                                className="w-full bg-white/5 border border-white/10 rounded-md py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                            />
 
-                    </div>
-                    <button type="submit" className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">Send Message</button>
-                </form>
+                        </div>
+                        <button type="submit" className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">Send Message</button>
+                    </form>
+                </div>
             </div>
         </RevealOnScroll>
 
