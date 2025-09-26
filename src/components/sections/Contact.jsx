@@ -29,7 +29,7 @@ export const Contact = () => {
     return <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-black px-4">
         <RevealOnScroll>
             <div className="max-w-2xl w-full border border-gray-700 rounded-xl text-center mx-auto p-8">
-                <div className="px-4 w-150 hover:-translate-y-1 transition-all max-w-2xl mx-auto rounded-xl p-8 border border-white/10 bg-gray-900/40">
+                <div className="px-4 w-100 hover:-translate-y-1 transition-all max-w-xl mx-auto rounded-xl p-8 border border-white/10 bg-gray-900/40">
                     <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">Get In Touch</h2>
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="relative">
