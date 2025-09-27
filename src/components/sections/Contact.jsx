@@ -14,65 +14,30 @@ export const Contact = () => {
         email: "",
         message: "",
     });
-    // EmailJS integration
-    
-    // const handleSubmit = (e) => {
-    //     e.preventDefault(); 
-    //     emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
-    //       .then((result) => {
-    //             console.log(result.text);
-    //             alert('Message sent successfully!');
-    //             setFormData({ name: "", email: "", message: "" }); // Clear form after submission
-    //       })
-    //       .catch((error) => {
-    //             console.error(error.text);
-    //             alert('Failed to send message. Please try again later.');
-    //       });
-    // }
 
-        //     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // emailjs
-        //     .sendForm(
-        //     import.meta.env.VITE_SERVICE_ID,
-        //     import.meta.env.VITE_TEMPLATE_ID,
-        //     e.target,
-        //     import.meta.env.VITE_PUBLIC_KEY
-        //     )
-        //     .then(
-        //     (result) => {
-        //         console.log("Email sent:", result.text);
-        //         alert("Message sent successfully!");
-        //         setFormData({ name: "", email: "", message: "" });
-        //     },
-        //     (error) => {
-        //         console.error("EmailJS error:", error);
-        //         alert("Failed to send message. Please try again later.");
-        //     }
-        //     );
-        // };
+        // EmailJS integration
+   
+         const handleSubmit = (e) => {
+             e.preventDefault();
 
-        const handleSubmit = (e) => {
-            e.preventDefault();
-
-            emailjs.sendForm(
-                import.meta.env.VITE_SERVICE_ID,
-                import.meta.env.VITE_TEMPLATE_ID,
-                e.target,
-                { publicKey: import.meta.env.VITE_PUBLIC_KEY }   // ✅ correct usage
-            )
-            .then(
-                (result) => {
-                console.log("Email sent:", result.text);
-                alert("Message sent successfully!");
-                setFormData({ name: "", email: "", message: "" });
-                },
-                (error) => {
-                console.error("EmailJS error:", error);
-                alert("Failed to send message. Please try again later.");
-                }
-            );
-        };
+             emailjs.sendForm(
+                 import.meta.env.VITE_SERVICE_ID,
+                 import.meta.env.VITE_TEMPLATE_ID,
+                 e.target,
+                 { publicKey: import.meta.env.VITE_PUBLIC_KEY }  
+             )
+             .then(
+                 (result) => {
+                 console.log("Email sent:", result.text);
+                 alert("Message sent successfully!");
+                 setFormData({ name: "", email: "", message: "" });
+                 },
+                 (error) => {
+                 console.error("EmailJS error:", error);
+                 alert("Failed to send message. Please try again later.");
+                 }
+             );
+         };
 
 
     return <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-black px-4">
