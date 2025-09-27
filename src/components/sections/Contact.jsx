@@ -1,10 +1,14 @@
 import { RevealOnScroll } from "../RevealOnScroll"
-import emailjs from 'emailjs-com';
+//import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser'
 import React from "react";
 
 
 
 export const Contact = () => {
+    console.log("service ID:", import.meta.env.VITE_SERVICE_ID);
+    console.log("public key:", import.meta.env.VITE_PUBLIC_KEY);
+
     const [formData, setFormData] = React.useState({
         name: "",
         email: "",
@@ -12,21 +16,68 @@ export const Contact = () => {
     });
     // EmailJS integration
     
-    const handleSubmit = (e) => {
-        e.preventDefault(); 
-        emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
-          .then((result) => {
-                console.log(result.text);
-                alert('Message sent successfully!');
-                setFormData({ name: "", email: "", message: "" }); // Clear form after submission
-          })
-          .catch((error) => {
-                console.error(error.text);
-                alert('Failed to send message. Please try again later.');
-          });
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault(); 
+    //     emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
+    //       .then((result) => {
+    //             console.log(result.text);
+    //             alert('Message sent successfully!');
+    //             setFormData({ name: "", email: "", message: "" }); // Clear form after submission
+    //       })
+    //       .catch((error) => {
+    //             console.error(error.text);
+    //             alert('Failed to send message. Please try again later.');
+    //       });
+    // }
+
+        //     const handleSubmit = (e) => {
+        // e.preventDefault();
+        // emailjs
+        //     .sendForm(
+        //     import.meta.env.VITE_SERVICE_ID,
+        //     import.meta.env.VITE_TEMPLATE_ID,
+        //     e.target,
+        //     import.meta.env.VITE_PUBLIC_KEY
+        //     )
+        //     .then(
+        //     (result) => {
+        //         console.log("Email sent:", result.text);
+        //         alert("Message sent successfully!");
+        //         setFormData({ name: "", email: "", message: "" });
+        //     },
+        //     (error) => {
+        //         console.error("EmailJS error:", error);
+        //         alert("Failed to send message. Please try again later.");
+        //     }
+        //     );
+        // };
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+
+            emailjs.sendForm(
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
+                e.target,
+                { publicKey: import.meta.env.VITE_PUBLIC_KEY }   // ✅ correct usage
+            )
+            .then(
+                (result) => {
+                console.log("Email sent:", result.text);
+                alert("Message sent successfully!");
+                setFormData({ name: "", email: "", message: "" });
+                },
+                (error) => {
+                console.error("EmailJS error:", error);
+                alert("Failed to send message. Please try again later.");
+                }
+            );
+        };
+
 
     return <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-black px-4">
+        
+
         <RevealOnScroll>
             <div className="max-w-2xl w-full border border-gray-700 rounded-xl text-center mx-auto p-8">
                 <div className="px-4 w-100 hover:-translate-y-1 transition-all max-w-xl mx-auto rounded-xl p-8 border border-white/10 bg-gray-900/40">
