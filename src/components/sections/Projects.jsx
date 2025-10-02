@@ -1,16 +1,6 @@
-import{ RevealOnScroll } from "../RevealOnScroll";
-import { useEffect, useState } from "react";
-// import portfolioImg from '../assets/portfolio.png';
-// import portfolioOldImg from '../assets/Portfolio-with-React.png';
-// import responsiveImg from '../assets/responsive-portfolio.png';
-// import bookatableImg from '../assets/bookatable.png';
-// import minimalApiImg from '../assets/minimalapi.png';
-import portfolioImg from '/images/portfolio.png';
-import portfolioOldImg from '/images/Portfolio-with-React.png';
-import responsiveImg from '/images/responsive-portfolio.png';
-import bookatableImg from '/images/bookatable.png';
-import minimalApiImg from '/images/minimalapi.png'; // Updated import paths
 
+import { RevealOnScroll } from "../RevealOnScroll";
+import { useEffect, useState } from "react";
 
 export const Projects = () => {
   const [frontend, setFrontend] = useState([]);
@@ -24,7 +14,7 @@ export const Projects = () => {
       repo: "Ashfaquls-Portfolio",
       fallbackDescription:
         "A personal portfolio site built with React and Tailwind CSS to showcase my work.",
-      image: portfolioImg,
+      image: "/images/portfolio.png",
       tech: ["React + Vite", "Tailwind CSS", "JavaScript"],
       github: "https://github.com/awalashfaqul/Ashfaquls-Portfolio",
     },
@@ -33,7 +23,7 @@ export const Projects = () => {
       repo: "portfolio-with-react",
       fallbackDescription:
         "A personal portfolio site built with React, HTML, and CSS to showcase my work while fetching data from GitHub API. Includes a resume generator.",
-      image: portfolioOldImg,
+      image: "/images/Portfolio-with-React.png",
       tech: ["HTML", "CSS", "VanillaJS", "React"],
       github: "https://github.com/awalashfaqul/portfolio-with-react",
     },
@@ -42,7 +32,7 @@ export const Projects = () => {
       repo: "Responsive-Portfolio",
       fallbackDescription:
         "A responsive portfolio site built with HTML, CSS, and vanilla JavaScript.",
-      image: responsiveImg,
+      image: "/images/responsive-portfolio.png",
       tech: ["HTML", "CSS", "VanillaJS"],
       github: "https://github.com/awalashfaqul/Responsive-Portfolio",
     },
@@ -54,15 +44,16 @@ export const Projects = () => {
       repo: "Book-a-Table",
       fallbackDescription:
         "Restaurant booking backend built with ASP.NET Core and SQL Server.",
-      image: bookatableImg,
+      image: "/images/bookatable.png",
       tech: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"],
-      github: "https://github.com/awalashfaqul/Book-a-Table", 
+      github: "https://github.com/awalashfaqul/Book-a-Table",
     },
     {
       title: "Personal interest fetcher with Minimal API",
       repo: "MiniProject-minimalAPI",
-      fallbackDescription: "This mini project is about building a simple Web API. The minimal API uses a REST architecture and has enabled external services and applications to retrieve and change data in the application.",
-      image: minimalApiImg,
+      fallbackDescription:
+        "This mini project is about building a simple Web API. The minimal API uses a REST architecture and has enabled external services and applications to retrieve and change data in the application.",
+      image: "/images/minimalapi.png",
       tech: ["C#", "minimal REST API", "ASP.NET Core"],
       github: "https://github.com/awalashfaqul/MiniProject-minimalAPI",
     },
@@ -129,73 +120,77 @@ export const Projects = () => {
   );
 
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center py-20 bg-black px-4">
+    <section
+      id="projects"
+      className="min-h-screen flex items-center justify-center py-20 bg-black px-4"
+    >
       <RevealOnScroll>
-      <div className="max-w-2xl w-full border border-gray-700 rounded-xl text-center mx-auto p-8">
-        <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">
-          Featured Projects
-        </h2>
+        <div className="max-w-2xl w-full border border-gray-700 rounded-xl text-center mx-auto p-8">
+          <h2 className="font-bold text-3xl md:text-6xl mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center">
+            Featured Projects
+          </h2>
 
-        <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 hover:shadow-[0_2px_10px_-1px_rgba(59,130,246,0.5)] transition-all">
+          <div className="rounded-xl p-8 border border-blue-500/20 mb-8 hover:-translate-y-1 hover:shadow-[0_2px_10px_-1px_rgba(59,130,246,0.5)] transition-all">
             <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
-                This section highlights a curated selection of my GitHub repositories, showcasing 
-                full-stack development with modern web technologies. Each project reflects hands-on 
-                experience in <strong className="text-blue-400">React</strong>, <strong className="text-blue-400">Tailwind CSS</strong>,  
-                and <strong className="text-blue-400">C#</strong>, <strong className="text-blue-400">ASP .NET Core</strong> backends, demonstrating 
-                clean architecture, scalable design, and a commitment to high-quality code.
+              This section highlights a curated selection of my GitHub repositories, showcasing
+              full-stack development with modern web technologies. Each project reflects hands-on
+              experience in <strong className="text-blue-400">React</strong>,{" "}
+              <strong className="text-blue-400">Tailwind CSS</strong>, and{" "}
+              <strong className="text-blue-400">C#</strong>,{" "}
+              <strong className="text-blue-400">ASP .NET Core</strong> backends, demonstrating clean
+              architecture, scalable design, and a commitment to high-quality code.
             </p>
             <p className="text-gray-300 text-lg mb-6 max-w-m mx-auto">
-                Explore the live demos and source code to see these solutions in action.
+              Explore the live demos and source code to see these solutions in action.
             </p>
-        </div>
-
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-green-300 underline">
-              Frontend Projects
-            </h4>
-            <div className="space-y-8">
-              {frontend.map((p) => (
-                <ProjectCard key={p.repo} project={p} />
-              ))}
-            </div>
           </div>
 
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-green-300 underline">
-              Backend Projects
-            </h4>
-            <div className="space-y-8">
-              {backend.map((p) => (
-                <ProjectCard key={p.repo} project={p} />
-              ))}
+          {/* Two-column layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-green-300 underline">
+                Frontend Projects
+              </h4>
+              <div className="space-y-8">
+                {frontend.map((p) => (
+                  <ProjectCard key={p.repo} project={p} />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-green-300 underline">
+                Backend Projects
+              </h4>
+              <div className="space-y-8">
+                {backend.map((p) => (
+                  <ProjectCard key={p.repo} project={p} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ---- Image Modal section starts here---- */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            className="absolute top-6 right-6 text-white text-3xl font-bold hover:text-red-400"
+        {/* ---- Image Modal ---- */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
             onClick={() => setSelectedImage(null)}
-            aria-label="Close"
           >
-            &times;
-          </button>
-          <img
-            src={selectedImage}
-            alt="Zoomed project"
-            className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl animate-fade-in"
-          />
-        </div>
-      )}
-      {/* ---- Image Modal section ends here---- */}
+            <button
+              className="absolute top-6 right-6 text-white text-3xl font-bold hover:text-red-400"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <img
+              src={selectedImage}
+              alt="Zoomed project"
+              className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl animate-fade-in"
+            />
+          </div>
+        )}
       </RevealOnScroll>
     </section>
   );
