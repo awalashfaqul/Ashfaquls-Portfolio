@@ -231,19 +231,19 @@ IV. **Build for production**
 
 ## 🐳 Local Docker Build & Run
 
-A. **Build Docker image**
+A) **Build Docker image**
 
    ```bash
    docker build -t ashfaqul-portfolio:latest .
    ```
 
-B. **Run locally**
+B) **Run locally**
 
    ```bash
    docker run -p 8080:80 ashfaqul-portfolio:latest
    ```
 
-C. **Open in browser**
+C) **Open in browser**
 
    ```
    http://localhost:8080
