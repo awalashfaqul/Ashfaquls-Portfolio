@@ -148,12 +148,14 @@ This project is now **containerized with Docker** and **deployed on Azure Kubern
 
 | Category         | Tools / Libraries                    |
 | ---------------- | ------------------------------------ |
-| Frontend         | React 18, Vite                       |
+| Frontend         | React + Vite                       |
 | Styling          | Tailwind CSS                         |
 | Server (Prod)    | Nginx (Alpine-based container)       |
 | Containerization | Docker                               |
-| Cloud Platform   | Azure Kubernetes Service (AKS)       |
-| Registry         | Azure Container Registry (ACR)       |
+| Cloud            | Azure Kubernetes Service (AKS)       |
+| Deployment       | Azure Container Registry (ACR), Azure Kubernetes Service (AKS)      |
+| DevOps Tools     | Azure CLI, kubectl, GitHub           |
+| Version Contro   | Git + GitHub           |
 | CI/CD Ready      | GitHub Actions (optional for future) |
 
 ---
