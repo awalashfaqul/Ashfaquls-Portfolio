@@ -200,27 +200,27 @@ ashfaquls-portfolio/
 
 ## Local Development
 
-I. **Clone the repository**
+I) **Clone the repository**
 
    ```bash
    git clone https://github.com/yourusername/Ashfaquls-Portfolio.git
    cd Ashfaquls-Portfolio
    ```
 
-II. **Install dependencies**
+II) **Install dependencies**
 
    ```bash
    npm install
    ```
 
-III. **Run locally (Vite Dev Server)**
+III) **Run locally (Vite Dev Server)**
 
    ```bash
    npm run dev
    # App will be available at http://localhost:5173
    ```
 
-IV. **Build for production**
+IV) **Build for production**
 
    ```bash
    npm run build
@@ -255,7 +255,7 @@ The portfolio will be running inside a Docker container served by **Nginx**.
 
 ## ☁️ Azure Cloud Deployment (ACR → AKS)
 
-### 1 To create Resource Group
+### [1] To create Resource Group
 
 ```bash
 RG=portfolio-rg
@@ -263,14 +263,14 @@ LOCATION=westeurope
 az group create --name $RG --location $LOCATION
 ```
 
-### 2 To create Azure Container Registry (ACR)
+### [2] To create Azure Container Registry (ACR)
 
 ```bash
 ACR_NAME=ashfaqulsportfolioacr
 az acr create --resource-group $RG --name $ACR_NAME --sku Basic
 ```
 
-### 3 To build and push Docker Image to ACR
+### [3] To build and push Docker Image to ACR
 
 ```bash
 az acr login --name $ACR_NAME
@@ -279,7 +279,7 @@ docker build -t $ACR_LOGIN_SERVER/portfolio:latest .
 docker push $ACR_LOGIN_SERVER/portfolio:latest
 ```
 
-### 4 To create AKS Cluster
+### [4] To create AKS Cluster
 
 ```bash
 AKS_NAME=portfolio-aks
@@ -287,13 +287,13 @@ az aks create --resource-group $RG --name $AKS_NAME --node-count 1 --generate-ss
 az aks get-credentials --resource-group $RG --name $AKS_NAME
 ```
 
-### 5 To grant AKS Access to ACR
+### [5] To grant AKS Access to ACR
 
 ```bash
 az aks update -n $AKS_NAME -g $RG --attach-acr $ACR_NAME
 ```
 
-### 6 To deploy to AKS
+### [6] To deploy to AKS
 
 ```bash
 kubectl apply -f k8s/deployment.yaml
