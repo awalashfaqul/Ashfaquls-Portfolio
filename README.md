@@ -123,14 +123,14 @@ This is a personal project, but suggestions and pull requests are welcome.
 
 
 
-# 🌐 Cloud-Native Portfolio Deployment | Azure Kubernetes Service (AKS)
+# Cloud-Native Portfolio Deployment | Azure Kubernetes Service (AKS)
 
 A responsive personal portfolio built with **React**, **Vite**, **Tailwind CSS**, and **Nginx**, showcasing my projects, experience, academic attainments, and certifications with a modern, animated UI.
 This project is now **containerized with Docker** and **deployed on Azure Kubernetes Service (AKS)** for scalability and cloud readiness.
 
 ---
 
-## ✨ Features
+## Features
 
 * ⚛️ **React + Vite** — lightning-fast builds and HMR.
 * 🎨 **Tailwind CSS** — clean, utility-first design system.
@@ -141,7 +141,7 @@ This project is now **containerized with Docker** and **deployed on Azure Kubern
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category         | Tools / Libraries                    |
 | ---------------- | ------------------------------------ |
@@ -155,7 +155,7 @@ This project is now **containerized with Docker** and **deployed on Azure Kubern
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ashfaquls-portfolio/
@@ -193,29 +193,29 @@ ashfaquls-portfolio/
 
 ---
 
-## ⚙️ Local Development
+## Local Development
 
-1. **Clone the repository**
+I. **Clone the repository**
 
    ```bash
    git clone https://github.com/yourusername/Ashfaquls-Portfolio.git
    cd Ashfaquls-Portfolio
    ```
 
-2. **Install dependencies**
+II. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-3. **Run locally (Vite Dev Server)**
+III. **Run locally (Vite Dev Server)**
 
    ```bash
    npm run dev
    # App will be available at http://localhost:5173
    ```
 
-4. **Build for production**
+IV. **Build for production**
 
    ```bash
    npm run build
@@ -226,19 +226,19 @@ ashfaquls-portfolio/
 
 ## 🐳 Local Docker Build & Run
 
-1. **Build Docker image**
+A. **Build Docker image**
 
    ```bash
    docker build -t ashfaqul-portfolio:latest .
    ```
 
-2. **Run locally**
+B. **Run locally**
 
    ```bash
    docker run -p 8080:80 ashfaqul-portfolio:latest
    ```
 
-3. **Open in browser**
+C. **Open in browser**
 
    ```
    http://localhost:8080
@@ -250,7 +250,7 @@ The portfolio will be running inside a Docker container served by **Nginx**.
 
 ## ☁️ Azure Cloud Deployment (ACR → AKS)
 
-### 1️⃣ To create Resource Group
+### 1 To create Resource Group
 
 ```bash
 RG=portfolio-rg
@@ -258,14 +258,14 @@ LOCATION=westeurope
 az group create --name $RG --location $LOCATION
 ```
 
-### 2️⃣ To create Azure Container Registry (ACR)
+### 2 To create Azure Container Registry (ACR)
 
 ```bash
 ACR_NAME=ashfaqulsportfolioacr
 az acr create --resource-group $RG --name $ACR_NAME --sku Basic
 ```
 
-### 3️⃣ To build and push Docker Image to ACR
+### 3 To build and push Docker Image to ACR
 
 ```bash
 az acr login --name $ACR_NAME
@@ -274,7 +274,7 @@ docker build -t $ACR_LOGIN_SERVER/portfolio:latest .
 docker push $ACR_LOGIN_SERVER/portfolio:latest
 ```
 
-### 4️⃣ To create AKS Cluster
+### 4 To create AKS Cluster
 
 ```bash
 AKS_NAME=portfolio-aks
@@ -282,13 +282,13 @@ az aks create --resource-group $RG --name $AKS_NAME --node-count 1 --generate-ss
 az aks get-credentials --resource-group $RG --name $AKS_NAME
 ```
 
-### 5️⃣ To grant AKS Access to ACR
+### 5 To grant AKS Access to ACR
 
 ```bash
 az aks update -n $AKS_NAME -g $RG --attach-acr $ACR_NAME
 ```
 
-### 6️⃣ To deploy to AKS
+### 6 To deploy to AKS
 
 ```bash
 kubectl apply -f k8s/deployment.yaml
@@ -308,11 +308,11 @@ When `EXTERNAL-IP` appears, it can be openned in the browser:
 http://4.223.233.247
 ```
 
-✅ **Portfolio is live on Azure Kubernetes Service!**
+**Portfolio is live on Azure Kubernetes Service!**
 
 ---
 
-## 🔍 Kubernetes Files Overview
+## Kubernetes Files Overview
 
 ### `k8s/deployment.yaml`
 
@@ -324,7 +324,7 @@ Creates a **LoadBalancer service** exposing port 80 to the public internet.
 
 ---
 
-## 🧩 Nginx Configuration
+## Nginx Configuration
 
 `nginx/default.conf`
 
@@ -359,9 +359,9 @@ This ensures proper routing for a **React single-page app (SPA)**.
 
 ---
 
-## 🚀 Future Enhancements (Planned)
+## Future Enhancements (Planned)
 
-### 🔗 Custom Domain + HTTPS
+### Custom Domain + HTTPS
 
 To make the site production-grade:
 
@@ -378,7 +378,7 @@ helm install nginx-ingress ingress-nginx/ingress-nginx --namespace ingress-basic
 
 ---
 
-## 🧠 Lessons Learned
+## Lessons Learned
 
 * Multi-stage Docker builds reduce image size and improve performance.
 * Nginx simplifies static SPA routing with `try_files`.
@@ -387,9 +387,9 @@ helm install nginx-ingress ingress-nginx/ingress-nginx --namespace ingress-basic
 
 ---
 
-## 📜 License
+## License
 
-MIT License © 2025 [Ashfaqul Awal](https://github.com/awalashfaqul)
+MIT License © 2025 
 
 ---
 
