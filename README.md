@@ -132,12 +132,15 @@ This project is now **containerized with Docker** and **deployed on Azure Kubern
 
 ## Features
 
-* ⚛️ **React + Vite** — lightning-fast builds and HMR.
-* 🎨 **Tailwind CSS** — clean, utility-first design system.
-* 🌀 **Animated Loading Screen** — typewriter intro & smooth transitions.
-* 📱 **Fully Responsive** — adaptive layout for all screen sizes.
-* 🧭 **SPA Routing** — handled by React Router with Nginx fallback.
-* ☁️ **Cloud-Ready** — Dockerized and deployed on Azure AKS.
+* React + Vite for ultra-fast development and HMR.
+* Tailwind CSS for a modern and fully responsive design.
+* Component-based architecture for clean maintainability.
+* Animated loading screen with typewriter effect and progress bar.
+* Responsive Navbar with mobile hamburger menu and smooth scrolling.
+* Multi-section layout for About, Projects, Contact, and more.
+* Dockerized setup for consistent local development and production parity.
+* Deployed to Azure Kubernetes Service (AKS) with Azure Container Registry (ACR).
+* CI/CD ready – scalable architecture for automated builds and rollouts.
 
 ---
 
